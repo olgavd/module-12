@@ -1,1 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Размеры и отступы</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <style>
+            * {
+                font-family: 'Roboto', sans-serif;
+            }
 
+             html, body {
+                 margin: 0;
+                 padding: 0;
+                 background-color: #f6f7f9;
+                 font-size: 20px;
+             }
+
+             header{
+                 height: 100px;
+                 padding: 0 40px;
+             }
+
+            header a, span, button {
+                margin-right: 30px;
+            }
+
+             header > div {
+                 display: flex;
+                 justify-content: space-between;
+                 align-items: center;
+             }
+
+             .fixed-container {
+                 max-width: 1300px;
+                 height: 100%;
+                 margin-left: auto;
+                 margin-right: auto;
+             }
+
+             section {
+                 padding: 40px;
+             }
+
+             .first-block {
+                 height: 600px;
+             }
+
+             .first-block > div {
+                 display: flex;
+                 flex-direction: column;
+                 justify-content: center;
+                 align-items: flex-start;
+                 background-image: url("img/man.png");
+                 background-size: contain;
+                 background-repeat: no-repeat;
+                 background-position: right center;
+             }
+
+             .first-block p, button {
+                 margin: 15px 0 15px 0;
+             }
+
+            h1 {
+                margin: 0;
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+             .services {
+                 display: flex;
+                 justify-content: space-between;
+                 margin-bottom: 30px;
+             }
+
+             .services > div {
+                 display: flex;
+                 flex-direction: column;
+                 width: 260px;
+             }
+
+             .services img {
+                 width: 150px;
+                 margin-bottom: 30px;
+
+             }
+
+             .examples {
+                 display: flex;
+                 justify-content: space-between;
+                 margin-bottom: 30px;
+             }
+
+             .examples > div {
+                 display: flex;
+                 flex-direction: column;
+                 width: 350px;
+             }
+
+             .examples img {
+                 width: 400px;
+                 margin-bottom: 15px;
+             }
+
+             .price-info {
+                 background-color: #3f2aff;
+                 color: white;
+             }
+
+             .price-info h2, p {
+                 width: 50%;
+             }
+
+             .price-info p {
+                 font-size: 0.8rem;
+                 margin: 60px 0;
+             }
+
+             .blocks {
+                 margin-bottom: 40px;
+             }
+
+             .light-button {
+                 border: 1px solid black;
+                 background-color: transparent;
+             }
+
+             .dark-button {
+                 background-color: #3f2aff;
+                 border: 1px solid #3f2aff;
+                 color: white;
+             }
+
+             button {
+                 padding: 10px 30px;
+                 cursor: pointer;
+                 border-radius: 5px;
+                 font-size: 1rem;
+             }
+
+             footer {
+                  padding: 40px;
+              }
+
+             footer a, button {
+                 margin-bottom: 15px;
+             }
+
+             .footer {
+                 display: flex;
+                 justify-content: space-between;
+             }
+
+            .footer-elements {
+                display: flex;
+                flex-direction: column;
+                width: 300px;
+            }
+
+            .footer-elements img {
+                width: 18px;
+                margin: 17px;
+            }
+
+            .fb {
+                height: 18px;
+            }
+
+            .social-networks {
+                display: flex;
+                align-items: center;
+            }
+
+             .popup-container {
+                 background-color: #000000bf;
+                 position: fixed;
+                 width: 100%;
+                 height: 100%;
+                 display: none;
+                 justify-content: center;
+                 align-items: center;
+             }
+
+             .popup {
+                 background-color: white;
+                 width: 300px;
+                 height: 300px;
+                 padding: 30px;
+                 border-radius: 5px;
+             }
+
+             a {
+                 color: black;
+                 text-decoration: none;
+             }
+
+             a:hover {
+                 text-decoration: underline;
+             }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function (){
+                var container = document.querySelector('.popup-container');
+                var popupButtons = document.querySelectorAll('.open-popup');
+                for (let i = 0; i < popupButtons.length; i++) {
+                    popupButtons[i].addEventListener('click', function (){
+                        container.style.display = 'flex';
+                    });
+                }
+
+                container.addEventListener('click', function(event){
+                    if(event.target == container) {
+                        container.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="popup-container">
+            <form class="popup">
+                <input type="text" placeholder="Введите ваше имя">
+                <input type="email" placeholder="Введите ваше E-mail">
+                <button>Отправить</button>
+            </form>
+        </div>
+        <header>
+            <div class="fixed-container">
+                <div>
+                    <a href="#">Услуги</a>
+                    <a href="#">Портфолио</a>
+                    <a href="#">Стоимость</a>
+                </div>
+                <div>
+                    <span>+7 (909) 999-55-44</span>
+                    <button class="light-button open-popup">Заказать звонок</button>
+                </div>
+            </div>
+        </header>
+        <section class="first-block blocks">
+            <div class="fixed-container">
+                <h1>Дмитрий Алексеев</h1>
+                <p>Frontend-разработчик и веб-верстальщик</p>
+                <button class="dark-button open-popup">Узнать больше</button>
+            </div>
+        </section>
+        <section class="blocks">
+            <div class="fixed-container">
+                <h2>Что я делаю</h2>
+                <div class="services">
+                    <div>
+                        <img src="img/1.png" alt="" >
+                        Верстка лэндинг-сстраниц и сайтов любой сложности</div>
+                    <div>
+                        <img src="img/2.png" alt="">
+                        Адаптивная верстка под все браузеры и устройства</div>
+                    <div>
+                        <img src="img/3.png" alt="">
+                        Frontend-разработка и програмирование</div>
+                    <div>
+                        <img src="img/4.png" alt="">
+                        Исправление и доработка существующей верстки</div>
+                </div>
+                <button class="light-button open-popup">Узнать стоимость</button>
+            </div>
+        </section>
+        <section class="blocks">
+            <div class="fixed-container">
+                <h2>Примеры работ</h2>
+                <div class="examples">
+                    <div>
+                        <img src="img/e1.png" alt="">
+                        Сайт психолга Веры Антоновой</div>
+                    <div>
+                        <img src="img/e2.png" alt="">
+                        Сайт магазина детской одежды</div>
+                    <div>
+                        <img src="img/e3.png" alt="">
+                        Сайт магазина "Рыболов"</div>
+                </div>
+                <button class="light-button open-popup">Заказать проект</button>
+            </div>
+        </section>
+        <section class="price-info blocks">
+            <div class="fixed-container">
+                <h2>Адаптивная верстка под все устройства и браузеры <br>от 1000 ₽. всего за 4 часа.*</h2>
+                <p><sup>*</sup>Срок и стоимость могут отличаться от заявленных и рассчитываются индивидуально, в зависимости от сложности задач.</p>
+            </div>
+        </section>
+        <footer>
+            <div class="fixed-container footer">
+                <div class="footer-elements">
+                    <a href="#">Услуги</a>
+                    <a href="#">Портфолио</a>
+                    <a href="#">Стоимость</a>
+                </div>
+                <div class="footer-elements">
+                    <a href="dmitry@alekseev.com">dmitry@alekseev.com</a>
+                    <span>+7 (909) 999-55-44</span>
+                </div>
+                <div class="footer-elements social-networks">
+                    <button class="light-button open-popup">Заказать звонок</button>
+                    <div>
+                        <img class="fb" src="img/fb.png" alt="">
+                        <img src="img/vk.png" alt="">
+                        <img src="img/you.png" alt="">
+                        <img src="img/telegram.png" alt="">
+                        <img src="img/inst.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
